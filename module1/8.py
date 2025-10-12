@@ -1,4 +1,3 @@
-import time
 def build_lps(pattern):
     lps = [0] * len(pattern)
     length = 0
@@ -48,17 +47,11 @@ def naive_search(text, pattern):
 if __name__ == "__main__":
     text = "CATSABCBCABCDOGSABCBCABC"
     pattern = "ABCBCABC"
-    start = time.time()
     kmp_matches, kmp_comp = kmp_search(text, pattern)
-    kmp_time = time.time() - start
-    start = time.time()
     naive_matches, naive_comp = naive_search(text, pattern)
-    naive_time = time.time() - start
     print("\nKMP Algorithm:")
     print("Matches found at:", kmp_matches)
     print("Comparisons:", kmp_comp)
-    print("Time Taken: {:.6f} seconds".format(kmp_time))
     print("\nNaive Algorithm:")
     print("Matches found at:", naive_matches)
     print("Comparisons:", naive_comp)
-    print("Time Taken: {:.6f} seconds".format(naive_time))
