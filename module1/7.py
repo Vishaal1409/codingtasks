@@ -1,4 +1,3 @@
-import time
 import random
 def bubble_sort(arr):
     a = arr[:]
@@ -37,18 +36,13 @@ if __name__ == "__main__":
     n = int(input("Enter number of elements: "))
     arr = [random.randint(0, 100) for _ in range(n)]
     print("Original Array:", arr)
-
     algorithms = {
         "Bubble Sort": bubble_sort,
         "Insertion Sort": insertion_sort,
         "Selection Sort": selection_sort
     }
     for name, func in algorithms.items():
-        start = time.time()
         sorted_arr, comparisons = func(arr)
-        end = time.time()
         print(f"\n{name}:")
         print("Sorted Array:", sorted_arr)
         print("Comparisons:", comparisons)
-        print("Time Taken: {:.6f} seconds".format(end - start))
-        print("Approx Memory (list elements):", len(sorted_arr) * 4, "bytes (approx)")
