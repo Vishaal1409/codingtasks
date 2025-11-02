@@ -9,7 +9,3 @@ def get_permutations(elements):
     return all_perms
 print("Permutations for numbers:")
 print(get_permutations([1, 2, 3]))
-print("\nPermutations for characters:")
-print(get_permutations(['a', 'b', 'c']))
-print("\nPermutations for a mix of data types:")
-print(get_permutations([1, 'a', 2.5]))
