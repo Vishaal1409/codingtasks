@@ -1,0 +1,16 @@
+function MaxSubarraySum_BruteForce(A):
+    max_so_far = -infinity // initialize with a very small number 
+    n = length(A)
+    // starting index i
+
+    for i from 0 to n-1:
+        current_sum = 0
+        // ending index j
+
+        for j from i to n-1:
+            // sum of A[i...j] incrementally
+            
+            current_sum = current_sum + A[j]
+            // maximum sum found
+            max_so_far = max(max_so_far, current_sum)
+    return max_so_far

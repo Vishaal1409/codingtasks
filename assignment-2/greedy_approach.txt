@@ -1,0 +1,22 @@
+function MaxSubarraySum_Greedy(A):
+    n = length(A)
+    
+    // initialize
+    max_global = A[0]
+    current_sum = A[0]
+    
+    // loop starts from the second element
+    for i from 1 to n-1:
+        
+        // greedy decision point
+        // if current_sum is negative, we choose to start fresh at A[i].
+        // if current_sum is non-negative, we choose to extend it.
+        if current_sum < 0:
+            current_sum = A[i] // start a new subarray
+        else:
+            current_sum = current_sum + A[i] // extend the current subarray
+            
+        // update the global result
+        max_global = max(max_global, current_sum)
+        
+    return max_global
